@@ -1,5 +1,8 @@
 
-gym_management_app/
+## Estructura del Proyecto
+
+```text
+zona_fit_app/
 │
 ├── main.py                     # Punto de entrada principal de tu aplicación
 │
@@ -8,7 +11,7 @@ gym_management_app/
 │
 ├── src/                        # Directorio principal del código fuente
 │   │
-│   ├── __init__.py             #Este archivo le indica a Python que el directorio src debe ser tratado como un paquete.
+│   ├── __init__.py             # Este archivo le indica a Python que el directorio src debe ser tratado como un paquete.
 │   │
 │   ├── models/                 # Para tus clases de objetos de negocio (POO)
 │   │   ├── __init__.py
@@ -37,5 +40,5 @@ gym_management_app/
 │   ├── __init__.py
 │   └── (archivos de prueba)
 │
-├── requirements.txt            # Dependencias del proyecto 
+├── requirements.txt            # Dependencias del proyecto
 └── README.md                   # Descripción del proyecto
