@@ -19,8 +19,9 @@ zona_fit_app/
 │   │
 │   ├── database/               # Para la lógica de acceso a datos y pool de conexiones
 │   │   ├── __init__.py
-│   │   └── connection_manager.py # Gestiona el pool de conexiones
+│   │   └── connection.py       # Gestiona el pool de conexiones
 │   │   └── client_dao.py       # CRUD operations for clients (Data Access Object)
+|   |   └── cursor_from_pool.py
 │   │
 │   ├── gui/                    # Para tus interfaces gráficas con Tkinter
 │   │   ├── __init__.py

@@ -1,6 +1,0 @@
-11:57:29 AM: INFO [logger_config.py:11] Logging configurado.
-11:57:29 AM: DEBUG [logger_config.py:16] Mensaje a nivel de debug
-11:57:29 AM: INFO [logger_config.py:17] Mensaje a nivel de info
-11:57:29 AM: WARNING [logger_config.py:18] Mensaje a nivel de warning
-11:57:29 AM: ERROR [logger_config.py:19] Mensaje a nivel de error
-11:57:29 AM: CRITICAL [logger_config.py:20] Mensaje a nivel de critical

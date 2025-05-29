@@ -1,0 +1,13 @@
+05:53:00 PM: INFO [logger_config.py:17] Logging configurado.
+05:53:00 PM: DEBUG [logger_config.py:26] Mensaje a nivel de debug
+05:53:00 PM: INFO [logger_config.py:27] Mensaje a nivel de info
+05:53:00 PM: WARNING [logger_config.py:28] Mensaje a nivel de warning
+05:53:00 PM: ERROR [logger_config.py:29] Mensaje a nivel de error
+05:53:00 PM: CRITICAL [logger_config.py:30] Mensaje a nivel de critical
+05:53:59 PM: INFO [logger_config.py:17] Logging configurado.
+05:53:59 PM: DEBUG [connection.py:19] Creacion del pool EXITOSA: <psycopg2.pool.SimpleConnectionPool object at 0x0000025A43094170>
+05:53:59 PM: DEBUG [connection.py:32] Conexion obtenida del pool: <connection object at 0x0000025A4302DE00; dsn: 'user=postgres password=xxx dbname=zona_fit host=127.0.0.1 port=5432', closed: 0>
+05:53:59 PM: DEBUG [connection.py:38] Regresa la conexión al pool : <connection object at 0x0000025A4302DE00; dsn: 'user=postgres password=xxx dbname=zona_fit host=127.0.0.1 port=5432', closed: 0>
+05:53:59 PM: DEBUG [connection.py:32] Conexion obtenida del pool: <connection object at 0x0000025A4302DE00; dsn: 'user=postgres password=xxx dbname=zona_fit host=127.0.0.1 port=5432', closed: 0>
+05:53:59 PM: DEBUG [connection.py:38] Regresa la conexión al pool : <connection object at 0x0000025A4302DE00; dsn: 'user=postgres password=xxx dbname=zona_fit host=127.0.0.1 port=5432', closed: 0>
+05:53:59 PM: DEBUG [connection.py:43] Se cerraron todas las conexiones
