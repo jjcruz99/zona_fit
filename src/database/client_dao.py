@@ -95,9 +95,9 @@ if __name__ == '__main__':
     #     log.error('No se pudo actualizar el cliente.')
 
     #Probar metodo para eliminar cliente
-    id_cliente_eliminado='2'
-    respuesta = ClientDAO.eliminar_cliente(id_cliente_eliminado)
-    if respuesta:
-        log.info(f'Se elimino cliente con el ID: {id_cliente_eliminado}')
-    else:
-        log.error('No se pudo eliminar el cliente.')
+    # id_cliente_eliminado='2'
+    # respuesta = ClientDAO.eliminar_cliente(id_cliente_eliminado)
+    # if respuesta:
+    #     log.info(f'Se elimino cliente con el ID: {id_cliente_eliminado}')
+    # else:
+    #     log.error('No se pudo eliminar el cliente.')

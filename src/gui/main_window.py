@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from src.database.client_dao import ClientDAO
+from src.services.client_service import ClientService
 
 
 class MainWindow(tk.Tk):
@@ -72,7 +72,7 @@ class MainWindow(tk.Tk):
         self.tabla.column(columnas[5],anchor=tk.CENTER, width=150)
 
         #Cargar los datos de los clientes
-        clientes = ClientDAO.obtener_clientes()
+        clientes = ClientService.obtener_todos_clientes()
         for cliente in clientes:
             self.tabla.insert(parent='', index=tk.END,
                               values=(cliente.id_cliente,
