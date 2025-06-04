@@ -1,4 +1,4 @@
-from connection import Connection
+from src.database.connection import Connection
 from src.utils.logger_config import log
 
 class CursorFromPool:
