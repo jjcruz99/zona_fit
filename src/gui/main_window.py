@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk,messagebox
 from src.services.client_service import ClientService
+from src.models.client import Client
 
 
 class MainWindow(tk.Tk):
@@ -16,6 +17,7 @@ class MainWindow(tk.Tk):
         self.mostrar_formulario()
         self.mostrar_tabla()
         self.mostrar_botones()
+        self.limpiar_datos()
 
     def configurar_ventana(self):
         self.geometry('1250x600')
@@ -41,7 +43,6 @@ class MainWindow(tk.Tk):
         etiqueta_titulo.grid(row=0,column=0,columnspan=2,pady=20)
 
     def mostrar_formulario(self):
-        print('hola desde mostrar formulario')
         self.frame_formulario = ttk.Frame(self)
 
         label_nombre = ttk.Label(self.frame_formulario,text='Nombre')
@@ -87,7 +88,6 @@ class MainWindow(tk.Tk):
                                bordercolor='gray',
                                borderwidth=1,
                                relief='solid')
-
 
     def mostrar_tabla(self):
         #crear tabla
@@ -168,8 +168,21 @@ class MainWindow(tk.Tk):
         self.estilos.configure('TButton',background='#005f73',font=12,padding=10,relief='ridge')
         self.estilos.map('TButton',background=[('active','#0a9396')])
 
+    #metodos de los botones
     def guardar_cliente(self):
-        pass
+        cliente = Client(nombre=self.entrada_nombre.get(),
+                         apellido=self.entrada_apellido.get(),
+                         id_membresia=self.entrada_membresia.get(),
+                         fecha_registro=self.entrada_fecha_registro.get(),
+                         email=self.entrada_email.get())
+        validacion = ClientService.validar_formulario_cliente(cliente)
+        if validacion:
+            id_generado = ClientService.registrar_nuevo_cliente(cliente)
+            messagebox.showinfo('Correcto',f'Cliente guardado con exito {id_generado}') if id_generado  else  messagebox.showerror('Error','No se pudo realizar la operacion')
+            self.mostrar_tabla()
+            self.limpiar_datos()
+        else:
+            messagebox.showerror('Campos vacios','Llene todos los campos')
 
     def eliminar_cliente(self):
         pass
@@ -178,7 +191,11 @@ class MainWindow(tk.Tk):
         pass
 
     def limpiar_datos(self):
-        pass
+        self.entrada_nombre.delete(0,tk.END)
+        self.entrada_apellido.delete(0,tk.END)
+        self.entrada_membresia.delete(0,tk.END)
+        self.entrada_fecha_registro.delete(0,tk.END)
+        self.entrada_email.delete(0,tk.END)
 
 if __name__ == '__main__':
     from src.utils.logger_config import setup_logging

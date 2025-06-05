@@ -1,3 +1,4 @@
+
 from src.database.client_dao import ClientDAO
 from src.utils.logger_config import log
 from src.models.client import Client
@@ -57,7 +58,11 @@ class ClientService:
 
     @staticmethod
     def validar_formulario_cliente(datos_cliente):
-        pass
+        if datos_cliente.nombre and datos_cliente.apellido and datos_cliente.membresia and datos_cliente.fecha_registro and datos_cliente.email:
+            return True
+        else:
+            return False
+
 
 #pruebas
 if __name__ == '__main__':
