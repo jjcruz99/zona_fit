@@ -70,7 +70,7 @@ class Login(tk.Tk):
         usuario = self.usuario_caja_texto.get()
         clave = self.clave_caja_texto.get()
         if usuario == ADMIN['usuario'] and clave == ADMIN['clave']:
-            messagebox.showinfo(title='Login', message='Datos correctos')
+            messagebox.showinfo(title='Login', message='Bienvenido')
             self._login_exitoso = True
             self.after(50,self.destroy)
         else:

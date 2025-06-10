@@ -98,7 +98,7 @@ Haz clic en el botón "Eliminar".
 
 ## Estado del Proyecto
 Actualmente, el proyecto se encuentra en desarrollo. Las funcionalidades principales de CRUD están 
-implementadas y son funcionales. Próximos pasos incluyen la implementación de pruebas unitarias
+implementadas y son funcionales. Próximos pasos incluyen la implementación de pruebas unitarias, valiaciones mas estrictas
 y la adición de nuevas características.
 
-
+git

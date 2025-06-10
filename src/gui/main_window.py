@@ -104,6 +104,7 @@ class MainWindow(tk.Tk):
                                bordercolor='gray',
                                borderwidth=1,
                                relief='solid')
+
     def mostrar_tabla(self):
         #crear tabla
         self.frame_tabla = ttk.Frame(self)
@@ -268,7 +269,7 @@ class MainWindow(tk.Tk):
     def limpiar_datos(self):
         self.entrada_nombre.delete(0,tk.END)
         self.entrada_apellido.delete(0,tk.END)
-        self.entrada_membresia.delete(0,tk.END)
+        self.entrada_membresia.current(0)
         self.entrada_fecha_registro.delete(0,tk.END)
         self.entrada_email.delete(0,tk.END)
         self.id_cliente = None
