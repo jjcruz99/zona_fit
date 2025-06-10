@@ -10,6 +10,7 @@ class MainWindow(tk.Tk):
 
     def __init__(self):
         super().__init__()
+        self.id_cliente = None
         #metodos para configurar ventana
         self.configurar_ventana()
         self.configurar_grid()
@@ -18,6 +19,7 @@ class MainWindow(tk.Tk):
         self.mostrar_tabla()
         self.mostrar_botones()
         self.limpiar_datos()
+        self.crear_cliente()
 
     def configurar_ventana(self):
         self.geometry('1250x600')
@@ -107,8 +109,7 @@ class MainWindow(tk.Tk):
         #Columnas de la tabla
         columnas = ('Id','Nombre','Apellido','Membresia','Fecha de registro', 'Email')
         self.tabla = ttk.Treeview(self.frame_tabla,columns=columnas,show='headings')
-        self.tabla.grid(row=0,column=0)
-        self.frame_tabla.grid(row=1,column=1,padx=20)
+
 
         #cabeceros de la tabla
         self.tabla.heading(columnas[0],text=columnas[0], anchor=tk.CENTER)
@@ -143,6 +144,14 @@ class MainWindow(tk.Tk):
         self.tabla.configure(yscroll=scrollbar.set)
         scrollbar.grid(row=0,column=1, sticky=tk.NS)
 
+        # Asociar el evento al hacer clic sobre algun cliente
+        self.tabla.bind('<<TreeviewSelect>>', self.cargar_cliente)
+
+        #Mostrar tabla y frame
+        self.tabla.grid(row=0,column=0)
+        self.frame_tabla.grid(row=1,column=1,padx=20)
+
+
     def mostrar_botones(self):
         self.frame_botones = ttk.Frame(self)
         self.frame_botones.grid(row=2,column=0,columnspan=2)
@@ -170,25 +179,79 @@ class MainWindow(tk.Tk):
 
     #metodos de los botones
     def guardar_cliente(self):
+        if self.id_cliente is None:
+            validacion= ClientService.validar_formulario_cliente(self.crear_cliente())
+            if validacion:
+                id_generado = ClientService.registrar_nuevo_cliente(self.crear_cliente())
+                messagebox.showinfo('Correcto',f'Cliente guardado con exito {id_generado}') if id_generado  else  messagebox.showerror('Error','No se pudo realizar la operacion')
+                self.mostrar_tabla()
+                self.limpiar_datos()
+            else:
+                messagebox.showerror('Campos vacios','Llene todos los campos')
+        else:
+            messagebox.showerror('Id duplicado',f' Error: Id= {self.id_cliente} ya existe.\n Alternativa: Modifique los datos y clic en ! Actualizar ¡')
+
+    #Cargar cliente desde la tabla
+    def cargar_cliente(self,event):
+
+        #limpiar datos del formulario antes de cargar los nuevos
+        self.limpiar_datos()
+
+        #Selecionar el primer elemento
+        elemento_seleccionado = self.tabla.selection()[0]
+        elemento = self.tabla.item(elemento_seleccionado)
+        #Tupla con los datos del cliente
+        cliente = elemento['values']
+        #recuperar cada dato del cliente
+        self.id_cliente = cliente[0]
+        nombre = cliente[1]
+        apellido = cliente[2]
+        id_membresia = cliente[3]
+        fecha_registro = cliente[4]
+        email = cliente[5]
+
+        self.entrada_nombre.insert(0,nombre)
+        self.entrada_apellido.insert(0,apellido)
+        self.entrada_membresia.insert(0,id_membresia)
+        self.entrada_fecha_registro.insert(0,fecha_registro)
+        self.entrada_email.insert(0,email)
+
+    #crear cliente tipo Cliente
+    def crear_cliente(self):
         cliente = Client(nombre=self.entrada_nombre.get(),
                          apellido=self.entrada_apellido.get(),
                          id_membresia=self.entrada_membresia.get(),
                          fecha_registro=self.entrada_fecha_registro.get(),
                          email=self.entrada_email.get())
-        validacion = ClientService.validar_formulario_cliente(cliente)
-        if validacion:
-            id_generado = ClientService.registrar_nuevo_cliente(cliente)
-            messagebox.showinfo('Correcto',f'Cliente guardado con exito {id_generado}') if id_generado  else  messagebox.showerror('Error','No se pudo realizar la operacion')
-            self.mostrar_tabla()
-            self.limpiar_datos()
-        else:
-            messagebox.showerror('Campos vacios','Llene todos los campos')
+        return cliente
 
     def eliminar_cliente(self):
-        pass
+
+        if self.id_cliente is None:
+            messagebox.showerror('Atención','Selecciona un cliente a eliminar')
+        else:
+            if ClientService.eliminar_cliente(self.id_cliente):
+                messagebox.showinfo('Eliminado', f' Se elimino el cliente con id= {self.id_cliente}')
+                self.mostrar_tabla()
+                self.limpiar_datos()
+            else:
+                messagebox.showerror('Error', 'No se pudo eliminar el cliente')
 
     def actualizar_cliente(self):
-        pass
+
+        validar_cliente = ClientService.validar_formulario_cliente(self.crear_cliente())
+
+        if validar_cliente:
+            cliente = self.crear_cliente()
+            cliente.id_cliente = self.id_cliente
+            if ClientService.actualizar_datos_cliente(cliente):
+                messagebox.showinfo('Actualización','Se actualizaron los datos correctamente.')
+                self.mostrar_tabla()
+                self.limpiar_datos()
+            else:
+                messagebox.showerror('Error','No se pudo realizar la actualización')
+        else:
+            messagebox.showerror('Campos vacios','Llene todos los campos')
 
     def limpiar_datos(self):
         self.entrada_nombre.delete(0,tk.END)
@@ -196,11 +259,12 @@ class MainWindow(tk.Tk):
         self.entrada_membresia.delete(0,tk.END)
         self.entrada_fecha_registro.delete(0,tk.END)
         self.entrada_email.delete(0,tk.END)
+        self.id_cliente = None
 
-if __name__ == '__main__':
-    from src.utils.logger_config import setup_logging
-    setup_logging()
-
-    ventana1= MainWindow()
-    ventana1.mainloop()
+# if __name__ == '__main__':
+#     from src.utils.logger_config import setup_logging
+#     setup_logging()
+#
+#     ventana1= MainWindow()
+#     ventana1.mainloop()
 
