@@ -19,9 +19,8 @@ class Connection:
                 log.debug(f'Creacion del pool EXITOSA: {cls._pool}')
                 return cls._pool
             except Exception as e:
-                # En lugar de sys.exit(), levantamos la excepción
                 log.error(f"Ocurrió un error al crear el pool de conexiones: {e}")
-                raise  # Esto permite que la capa superior maneje el error
+                raise  #permite que la capa superior maneje el error
         else:
             return cls._pool
 

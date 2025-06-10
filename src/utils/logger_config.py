@@ -2,10 +2,6 @@ import logging as log
 import os
 
 def setup_logging():
-    # Define la ruta absoluta al archivo de log
-    # __file__ es la ruta del archivo actual (logger_config.py)
-    # os.path.dirname(__file__) obtiene el directorio de ese archivo (src/utils)
-    # os.path.join lo une con el nombre del archivo de log
     log_file_path = os.path.join(os.path.dirname(__file__), 'capa_de_datos.log')
     log.basicConfig(level=log.DEBUG,
                 format='%(asctime)s: %(levelname)s [%(filename)s:%(lineno)s] %(message)s',

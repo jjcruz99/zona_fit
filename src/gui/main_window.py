@@ -39,12 +39,13 @@ class MainWindow(tk.Tk):
 
     def mostrar_titulo(self):
         etiqueta_titulo = ttk.Label(self,text='Zona Fit GYM',
-                                    font=('Arial',20),
+                                    font=('Arial',20,'bold'),
                                     background=MainWindow.COLOR_VENTANA,
                                     foreground='white')
         etiqueta_titulo.grid(row=0,column=0,columnspan=2,pady=20)
 
     def mostrar_formulario(self):
+
         self.frame_formulario = ttk.Frame(self)
 
         label_nombre = ttk.Label(self.frame_formulario,text='Nombre')
@@ -59,8 +60,13 @@ class MainWindow(tk.Tk):
 
         label_membresia = ttk.Label(self.frame_formulario,text='Membresia')
         label_membresia.grid(row=2,column=0,sticky=tk.W,pady=10,padx=5)
-        self.entrada_membresia = ttk.Entry(self.frame_formulario,width=40)
+        _IDS_MEMBRESIA = [1,2,3]
+        self.entrada_membresia = ttk.Combobox(self.frame_formulario,
+                                              width=38,
+                                              values = _IDS_MEMBRESIA,
+                                              state='readonly')
         self.entrada_membresia.grid(row=2,column=1)
+        self.entrada_membresia.current(0)
 
         label_fecha_registro = ttk.Label(self.frame_formulario,text='Fecha de registro')
         label_fecha_registro.grid(row=3,column=0,sticky=tk.W,pady=10,padx=5)
@@ -91,6 +97,13 @@ class MainWindow(tk.Tk):
                                borderwidth=1,
                                relief='solid')
 
+        self.estilos.configure('TCombobox',padding=5,
+                               font=('Arial', 12),
+                               foreground='black',
+                               fieldbackground='white',
+                               bordercolor='gray',
+                               borderwidth=1,
+                               relief='solid')
     def mostrar_tabla(self):
         #crear tabla
         self.frame_tabla = ttk.Frame(self)
@@ -211,7 +224,7 @@ class MainWindow(tk.Tk):
 
         self.entrada_nombre.insert(0,nombre)
         self.entrada_apellido.insert(0,apellido)
-        self.entrada_membresia.insert(0,id_membresia)
+        self.entrada_membresia.set(id_membresia)
         self.entrada_fecha_registro.insert(0,fecha_registro)
         self.entrada_email.insert(0,email)
 

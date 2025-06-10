@@ -29,9 +29,8 @@ if __name__ == '__main__':
 
     from src.utils.logger_config import setup_logging
 
-    setup_logging()  # Lo llamar la configuracion para la prueba
+    setup_logging()
     try:
-        ## se llama indirectamente __init__ y __enter__ y cuando termina el with se llama __exit__
         with CursorFromPool() as cursor:
             cursor.execute('SELECT * FROM cliente')
             print('Listado de clientes:')
