@@ -173,7 +173,7 @@ class MainWindow(tk.Tk):
         boton_limpiar.grid(row=0,column=3,padx=20,pady=40)
 
         #Estilos botones
-        self.estilos.configure('TButton',background='#005f73',font=12,padding=10,relief='ridge')
+        self.estilos.configure('TButton',background='#005f73',font=12,padding=10,relief='raised',borderwidth=2)
         self.estilos.map('TButton',background=[('active','#0a9396')])
 
     #metodos de los botones

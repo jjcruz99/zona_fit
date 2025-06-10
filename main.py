@@ -1,5 +1,6 @@
 
-from src.gui.login import Login,MainWindow
+from src.gui.login import Login
+from src.gui.main_window import MainWindow
 from src.utils.logger_config import setup_logging,log
 
 if __name__ == '__main__':

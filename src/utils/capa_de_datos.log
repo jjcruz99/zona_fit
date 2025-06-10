@@ -1040,3 +1040,76 @@ DETAIL:  Key (email)=(lucia.torres@email.com) already exists.
 08:42:45 PM: DEBUG [connection.py:38] Regresa la conexión al pool : <connection object at 0x000001D973A8EF00; dsn: 'user=postgres password=xxx dbname=zona_fit host=127.0.0.1 port=5432', closed: 0>
 08:46:02 PM: INFO [logger_config.py:17] Logging configurado.
 08:46:12 PM: INFO [main.py:15] Inicio de sesión cancelado. El programa ha finalizado.
+08:51:21 PM: INFO [logger_config.py:17] Logging configurado.
+08:51:53 PM: DEBUG [cursor_from_pool.py:10] Inicio del método with __enter__
+08:51:53 PM: DEBUG [connection.py:19] Creacion del pool EXITOSA: <psycopg2.pool.SimpleConnectionPool object at 0x000001899757D670>
+08:51:53 PM: DEBUG [connection.py:32] Conexion obtenida del pool: <connection object at 0x00000189974CF010; dsn: 'user=postgres password=xxx dbname=zona_fit host=127.0.0.1 port=5432', closed: 0>
+08:51:53 PM: DEBUG [cursor_from_pool.py:16] Se ejecuta metodo __exit__
+08:51:53 PM: DEBUG [cursor_from_pool.py:23] Commit de la transacción
+08:51:53 PM: DEBUG [connection.py:38] Regresa la conexión al pool : <connection object at 0x00000189974CF010; dsn: 'user=postgres password=xxx dbname=zona_fit host=127.0.0.1 port=5432', closed: 0>
+08:53:09 PM: DEBUG [cursor_from_pool.py:10] Inicio del método with __enter__
+08:53:09 PM: DEBUG [connection.py:32] Conexion obtenida del pool: <connection object at 0x00000189974CF010; dsn: 'user=postgres password=xxx dbname=zona_fit host=127.0.0.1 port=5432', closed: 0>
+08:53:09 PM: DEBUG [client_dao.py:52] Se actualizaron los datos del cliente con id: 18
+08:53:09 PM: DEBUG [cursor_from_pool.py:16] Se ejecuta metodo __exit__
+08:53:09 PM: DEBUG [cursor_from_pool.py:23] Commit de la transacción
+08:53:09 PM: DEBUG [connection.py:38] Regresa la conexión al pool : <connection object at 0x00000189974CF010; dsn: 'user=postgres password=xxx dbname=zona_fit host=127.0.0.1 port=5432', closed: 0>
+08:53:11 PM: DEBUG [cursor_from_pool.py:10] Inicio del método with __enter__
+08:53:11 PM: DEBUG [connection.py:32] Conexion obtenida del pool: <connection object at 0x00000189974CF010; dsn: 'user=postgres password=xxx dbname=zona_fit host=127.0.0.1 port=5432', closed: 0>
+08:53:11 PM: DEBUG [cursor_from_pool.py:16] Se ejecuta metodo __exit__
+08:53:11 PM: DEBUG [cursor_from_pool.py:23] Commit de la transacción
+08:53:11 PM: DEBUG [connection.py:38] Regresa la conexión al pool : <connection object at 0x00000189974CF010; dsn: 'user=postgres password=xxx dbname=zona_fit host=127.0.0.1 port=5432', closed: 0>
+08:58:20 PM: INFO [logger_config.py:17] Logging configurado.
+08:58:49 PM: DEBUG [cursor_from_pool.py:10] Inicio del método with __enter__
+08:58:50 PM: DEBUG [connection.py:19] Creacion del pool EXITOSA: <psycopg2.pool.SimpleConnectionPool object at 0x000001D21ED68E60>
+08:58:50 PM: DEBUG [connection.py:32] Conexion obtenida del pool: <connection object at 0x000001D21ECAF010; dsn: 'user=postgres password=xxx dbname=zona_fit host=127.0.0.1 port=5432', closed: 0>
+08:58:50 PM: DEBUG [cursor_from_pool.py:16] Se ejecuta metodo __exit__
+08:58:50 PM: DEBUG [cursor_from_pool.py:23] Commit de la transacción
+08:58:50 PM: DEBUG [connection.py:38] Regresa la conexión al pool : <connection object at 0x000001D21ECAF010; dsn: 'user=postgres password=xxx dbname=zona_fit host=127.0.0.1 port=5432', closed: 0>
+11:01:59 AM: INFO [logger_config.py:17] Logging configurado.
+11:02:11 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:05:06 AM: INFO [logger_config.py:17] Logging configurado.
+11:05:35 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:05:40 AM: INFO [logger_config.py:17] Logging configurado.
+11:06:01 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:06:58 AM: INFO [logger_config.py:17] Logging configurado.
+11:07:31 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:08:26 AM: INFO [logger_config.py:17] Logging configurado.
+11:08:39 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:14:04 AM: INFO [logger_config.py:17] Logging configurado.
+11:14:40 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:15:22 AM: INFO [logger_config.py:17] Logging configurado.
+11:20:09 AM: INFO [logger_config.py:17] Logging configurado.
+11:20:23 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:20:29 AM: INFO [logger_config.py:17] Logging configurado.
+11:20:51 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:20:59 AM: INFO [logger_config.py:17] Logging configurado.
+11:21:01 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:21:23 AM: INFO [logger_config.py:17] Logging configurado.
+11:21:40 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:21:42 AM: INFO [logger_config.py:17] Logging configurado.
+11:22:01 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:22:17 AM: INFO [logger_config.py:17] Logging configurado.
+11:22:33 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:26:13 AM: INFO [logger_config.py:17] Logging configurado.
+11:26:37 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:28:30 AM: INFO [logger_config.py:17] Logging configurado.
+11:28:45 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:29:35 AM: INFO [logger_config.py:17] Logging configurado.
+11:30:28 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:30:30 AM: INFO [logger_config.py:17] Logging configurado.
+11:30:53 AM: INFO [logger_config.py:17] Logging configurado.
+11:31:26 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:31:34 AM: INFO [logger_config.py:17] Logging configurado.
+11:31:46 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:32:22 AM: INFO [logger_config.py:17] Logging configurado.
+11:32:54 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:33:41 AM: INFO [logger_config.py:17] Logging configurado.
+11:33:51 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:33:59 AM: INFO [logger_config.py:17] Logging configurado.
+11:34:05 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:34:18 AM: INFO [logger_config.py:17] Logging configurado.
+11:34:29 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:34:37 AM: INFO [logger_config.py:17] Logging configurado.
+11:34:48 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
+11:35:01 AM: INFO [logger_config.py:17] Logging configurado.
+11:35:19 AM: INFO [main.py:16] Inicio de sesión cancelado. El programa ha finalizado.
