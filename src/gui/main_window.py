@@ -151,7 +151,6 @@ class MainWindow(tk.Tk):
         self.tabla.grid(row=0,column=0)
         self.frame_tabla.grid(row=1,column=1,padx=20)
 
-
     def mostrar_botones(self):
         self.frame_botones = ttk.Frame(self)
         self.frame_botones.grid(row=2,column=0,columnspan=2)
@@ -251,7 +250,7 @@ class MainWindow(tk.Tk):
             else:
                 messagebox.showerror('Error','No se pudo realizar la actualización')
         else:
-            messagebox.showerror('Campos vacios','Llene todos los campos')
+            messagebox.showerror('Campos vacios','Seleccione un cliente y actualice los datos.')
 
     def limpiar_datos(self):
         self.entrada_nombre.delete(0,tk.END)
@@ -261,10 +260,10 @@ class MainWindow(tk.Tk):
         self.entrada_email.delete(0,tk.END)
         self.id_cliente = None
 
-# if __name__ == '__main__':
-#     from src.utils.logger_config import setup_logging
-#     setup_logging()
-#
-#     ventana1= MainWindow()
-#     ventana1.mainloop()
+if __name__ == '__main__':
+    from src.utils.logger_config import setup_logging
+    setup_logging()
+
+    ventana1= MainWindow()
+    ventana1.mainloop()
 

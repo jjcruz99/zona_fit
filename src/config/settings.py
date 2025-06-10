@@ -9,3 +9,7 @@ POOL_CONFIG = {
     'min_con': 1,
     'max_con': 5
 }
+ADMIN = {
+    'usuario' : 'admin',
+    'clave' : 'Admin'
+}
